@@ -1,0 +1,67 @@
+Inherientance:
+1. Constructor must be in called in the first line of a constructor with this or super keyword.
+2. toString() method must be provided public.
+3. Abstract class cannot be initialized.
+4. Abstract class can have methods with body which will take effect if its subclasses don't overwrite them.
+5. static variables is associated with a class not an instance
+6. Static methods cannot be overwritten.
+7. You don’t have to explicitly use the static keyword with a nested interface, since it is implicitly static.
+8. It is not possible to declare a non-static inner interface.
+9. You can pass only final variables to a local inner class.
+10. Inner classes cannot have static declarations.
+11. A constructor in an enum class can only be specified as private.
+12. If you declare a data member in an interface, it should be initialized, and all such data members are implicitly treated as “public static final” members.
+13. All methods in the java.util.math library are static
+14. Variables in an Interface is public and static, methods in a Interface is either public or abstract. 
+15. Regarding questions about has-a and is-a relationship, always focus on direct relationship. 
+Generics and collections:
+1. When you use wildcard parameters, you cannot call methods that modify the object.
+2. The methods hashCode() and equals()need to be consistent for a class.
+3. The second parameter of split() method defines the number of parts that will be divided.
+4. \b will not work if the start and end of a string is not a word character.
+Java I/O:
+1. All class members will not be serialized if they are declared as “transit”.
+2. whenever you make a change in a serialized class, do not forget to change the serialVersionUID also.
+3. the class file of the object must be in the path of the destination machine, otherwise only the state of the object will be restored .
+4. If a class is already serialized and you try to serialize it again, the JVM will not serialize it.
+5. You can create your own protocol for serialization. For that, you just need to implement the Externalizable interface instead of the Serializable interface.
+Character streams					|Byte streams
+________________________________________________________|__________________________________________________________________
+Meant for reading or writing to character- or		|Meant for reading or writing to binary data I/O such as
+text-based I/O such as text files, text documents,	|executable files, image files, and files in low-level file formats
+XML, and HTML files.					|such as .zip, .class, .obj, and .exe.
+________________________________________________________|_________________________________________________________________
+Data dealt with is 16-bit Unicode characters.		|Data dealt with is bytes (i.e., units of 8-bit data).
+________________________________________________________|___________________________________________________________________
+Input and output character streams are called		|Input and output byte streams are simply called input streams and output 
+readers and writers, respectively.			|streams, respectively. 
+________________________________________________________|__________________________________________________________________
+The abstract classes of Reader and Writer and		|The abstract classes of InputStream and OutputStream and their derived 
+their derived classes in the java.io package		|classes in the java.io package provide support
+provide support for character streams.			|for byte streams.
+________________________________________________________|___________________________________________________________________
+
+
+Thread:
+1. The sleep()method throws InterruptedException.
+2. Can we use sleep() method to let main thread sleep for a while?
+3. If the current thread invokes join() on an instance of another thread, then the current thread waits indefinitely for that other thread to die.
+4.  If an exception gets thrown inside the synchronized block, the lock will be automatically released by the JVM.
+5. With synchronized blocks, you can acquire a lock on a reference variable only. If you use a primitive type, you will get a compiler error.
+6. The JVM ensures that only one thread can invoke a constructor call (for a specific constructor) at a given point in time. So, there is no need to declare a constructor synchronized.
+7. While using synchronized keyword, the lock is obtained for an object not for a piece of code.
+8. When you call start(), the thread moves to the newstate. There is no proper state transition from the new state if you call start()again, so the JVM throws an IllegalThreadStateException.
+9. The wait(int)method (with or without timeout value) should be called only after acquiring a lock
+
+File I/O:
+1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
+2. If you move a symbolic link with File.move() method, the link itself will be moved, not the target file of the link. It is important to note that in the case of the copy() method, if you specify a symbolic link, the target of the link is copied, not the link itself.
+
+Database:
+1. Two-tier architecture and three-tier architecture consist of JDBC architecture.
+2. There are 4 types of JDBC drivers: 
+a. JDBC-ODBC driver
+b. Native-API driver, e.g. ojdbc14.jar
+c. Network-protocol JDBC (for three-tier architecture), e.g. http://www.javaworld.com/javaworld/jw-05-2002/jw-0517-jdbcdriver.html?page=1
+d. Native-protocol driver, e.g. Oracle thin driver, IBM tool box
+
