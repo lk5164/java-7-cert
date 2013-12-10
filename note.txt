@@ -14,6 +14,7 @@ Inherientance:
 13. All methods in the java.util.math library are static
 14. Variables in an Interface is public and static, methods in a Interface is either public or abstract. 
 15. Regarding questions about has-a and is-a relationship, always focus on direct relationship. 
+16. Enums are implicitly declared public, static, and final, which means you cannot extend them.
 Generics and collections:
 1. When you use wildcard parameters, you cannot call methods that modify the object.
 2. The methods hashCode() and equals()need to be consistent for a class.
@@ -52,6 +53,7 @@ Thread:
 7. While using synchronized keyword, the lock is obtained for an object not for a piece of code.
 8. When you call start(), the thread moves to the newstate. There is no proper state transition from the new state if you call start()again, so the JVM throws an IllegalThreadStateException.
 9. The wait(int)method (with or without timeout value) should be called only after acquiring a lock
+10. You cannot synchronized an interface or abstract method. 
 
 File I/O:
 1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
@@ -64,4 +66,8 @@ a. JDBC-ODBC driver
 b. Native-API driver, e.g. ojdbc14.jar
 c. Network-protocol JDBC (for three-tier architecture), e.g. http://www.javaworld.com/javaworld/jw-05-2002/jw-0517-jdbcdriver.html?page=1
 d. Native-protocol driver, e.g. Oracle thin driver, IBM tool box
+
+Design Principles:
+1. Class inheritance implies an is-a relationship, interface inheritance implies an is-like-a relationship, and composition implies a has-a relationship.
+2. favor composition over inheritance.
 
