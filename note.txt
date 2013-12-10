@@ -65,3 +65,7 @@ b. Native-API driver, e.g. ojdbc14.jar
 c. Network-protocol JDBC (for three-tier architecture), e.g. http://www.javaworld.com/javaworld/jw-05-2002/jw-0517-jdbcdriver.html?page=1
 d. Native-protocol driver, e.g. Oracle thin driver, IBM tool box
 
+Design Principles:
+1. Class inheritance implies an is-a relationship, interface inheritance implies an is-like-a relationship, and composition implies a has-a relationship.
+2. favor composition over inheritance.
+
