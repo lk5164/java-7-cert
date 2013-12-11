@@ -54,6 +54,7 @@ Thread:
 8. When you call start(), the thread moves to the newstate. There is no proper state transition from the new state if you call start()again, so the JVM throws an IllegalThreadStateException.
 9. The wait(int)method (with or without timeout value) should be called only after acquiring a lock
 10. You cannot synchronized an interface or abstract method. 
+11. CopyOnWriteArrayList class is used in concurrent case where a thread try to remove an empty ArrayList, it will wait until another thread add one element for that ArrayList
 
 File I/O:
 1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
