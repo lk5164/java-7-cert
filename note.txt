@@ -1,4 +1,4 @@
-Inherientance:
+Inheritance:
 1. Constructor must be in called in the first line of a constructor with this or super keyword.
 2. toString() method must be provided public.
 3. Abstract class cannot be initialized.
@@ -15,6 +15,7 @@ Inherientance:
 14. Variables in an Interface is public and static, methods in a Interface is either public or abstract. 
 15. Regarding questions about has-a and is-a relationship, always focus on direct relationship. 
 16. Enums are implicitly declared public, static, and final, which means you cannot extend them.
+17. Overloading means same method name in the same class, overriding means same method name in inheritance hierarchy.
 Generics and collections:
 1. When you use wildcard parameters, you cannot call methods that modify the object.
 2. The methods hashCode() and equals()need to be consistent for a class.
@@ -51,7 +52,7 @@ Thread:
 5. With synchronized blocks, you can acquire a lock on a reference variable only. If you use a primitive type, you will get a compiler error.
 6. The JVM ensures that only one thread can invoke a constructor call (for a specific constructor) at a given point in time. So, there is no need to declare a constructor synchronized.
 7. While using synchronized keyword, the lock is obtained for an object not for a piece of code.
-8. When you call start(), the thread moves to the newstate. There is no proper state transition from the new state if you call start()again, so the JVM throws an IllegalThreadStateException.
+8. When you call start(), the thread moves to the new state. There is no proper state transition from the new state if you call start()again, so the JVM throws an IllegalThreadStateException.
 9. The wait(int)method (with or without timeout value) should be called only after acquiring a lock
 10. You cannot synchronized an interface or abstract method. 
 11. CopyOnWriteArrayList class is used in concurrent case where a thread try to remove an empty ArrayList, it will wait until another thread add one element for that ArrayList
