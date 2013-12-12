@@ -16,11 +16,28 @@ Inheritance:
 15. Regarding questions about has-a and is-a relationship, always focus on direct relationship. 
 16. Enums are implicitly declared public, static, and final, which means you cannot extend them.
 17. Overloading means same method name in the same class, overriding means same method name in inheritance hierarchy.
+18. Comparing overloading and overriding:
+Overriding                                              |Overloading
+________________________________________________________|__________________________________________________________________
+Should have the same argument list types (or compatible |Should not have same argument list types
+types) as the base version.                             |
+________________________________________________________|__________________________________________________________________
+Should have the same return type or the return type can |You cannot overload methods with the methods differing in return 
+be a subclass-covariant return types.                   |types alone.
+________________________________________________________|__________________________________________________________________
+Should not have a more restrictive access modifier than |You cannot overload methods with the methods differing in modifier 
+the base version.                                       |alone.
+________________________________________________________|__________________________________________________________________
+Should not throw new or broader checked exceptions      |You cannot overload methods with the methods differing in exception 
+                                                        |specifications alone.
+________________________________________________________|__________________________________________________________________
+
 Generics and collections:
 1. When you use wildcard parameters, you cannot call methods that modify the object.
 2. The methods hashCode() and equals()need to be consistent for a class.
 3. The second parameter of split() method defines the number of parts that will be divided.
 4. \b will not work if the start and end of a string is not a word character.
+
 Java I/O:
 1. All class members will not be serialized if they are declared as “transit”.
 2. whenever you make a change in a serialized class, do not forget to change the serialVersionUID also.
@@ -60,7 +77,8 @@ Thread:
 File I/O:
 1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
 2. If you move a symbolic link with File.move() method, the link itself will be moved, not the target file of the link. It is important to note that in the case of the copy() method, if you specify a symbolic link, the target of the link is copied, not the link itself.
-
+3. "Relativize" method must be used with two same type file path. If path1 equals as "a/x" and path2 equals as "a/b", then path1.relativize(path2) will return value of "../b" which is the way from path1 to path2.
+ 
 Database:
 1. Two-tier architecture and three-tier architecture consist of JDBC architecture.
 2. There are 4 types of JDBC drivers: 

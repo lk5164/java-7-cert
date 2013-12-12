@@ -25,6 +25,7 @@ public class PathCompare1
 		// comparing two paths using equals() method with absolute path
 		System.out.println("path2.equals(path1.toAbsolutePath()) is "
 		+ path2.equals(path1.toAbsolutePath()));
+		System.out.println(path1.relativize(path2));
 	}
 
 }
