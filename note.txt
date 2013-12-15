@@ -31,6 +31,7 @@ ________________________________________________________|_______________________
 Should not throw new or broader checked exceptions      |You cannot overload methods with the methods differing in exception 
                                                         |specifications alone.
 ________________________________________________________|__________________________________________________________________
+19. Any field in an interface is implicitly declared public and static.
 
 Generics and collections:
 1. When you use wildcard parameters, you cannot call methods that modify the object.
@@ -59,20 +60,20 @@ Java I/O:
 3. the class file of the object must be in the path of the destination machine, otherwise only the state of the object will be restored .
 4. If a class is already serialized and you try to serialize it again, the JVM will not serialize it.
 5. You can create your own protocol for serialization. For that, you just need to implement the Externalizable interface instead of the Serializable interface.
-Character streams					|Byte streams
+Character streams                                       |Byte streams
 ________________________________________________________|__________________________________________________________________
-Meant for reading or writing to character- or		|Meant for reading or writing to binary data I/O such as
-text-based I/O such as text files, text documents,	|executable files, image files, and files in low-level file formats
-XML, and HTML files.					|such as .zip, .class, .obj, and .exe.
+Meant for reading or writing to character- or           |Meant for reading or writing to binary data I/O such as
+text-based I/O such as text files, text documents,      |executable files, image files, and files in low-level file formats
+XML, and HTML files.                                    |such as .zip, .class, .obj, and .exe.
 ________________________________________________________|_________________________________________________________________
-Data dealt with is 16-bit Unicode characters.		|Data dealt with is bytes (i.e., units of 8-bit data).
+Data dealt with is 16-bit Unicode characters.           |Data dealt with is bytes (i.e., units of 8-bit data).
 ________________________________________________________|___________________________________________________________________
-Input and output character streams are called		|Input and output byte streams are simply called input streams and output 
-readers and writers, respectively.			|streams, respectively. 
+Input and output character streams are called           |Input and output byte streams are simply called input streams and output 
+readers and writers, respectively.                      |streams, respectively. 
 ________________________________________________________|__________________________________________________________________
-The abstract classes of Reader and Writer and		|The abstract classes of InputStream and OutputStream and their derived 
-their derived classes in the java.io package		|classes in the java.io package provide support
-provide support for character streams.			|for byte streams.
+The abstract classes of Reader and Writer and           |The abstract classes of InputStream and OutputStream and their derived 
+their derived classes in the java.io package            |classes in the java.io package provide support
+provide support for character streams.                  |for byte streams.
 ________________________________________________________|___________________________________________________________________
 
 Thread:
@@ -104,4 +105,11 @@ d. Native-protocol driver, e.g. Oracle thin driver, IBM tool box
 Design Principles:
 1. Class inheritance implies an is-a relationship, interface inheritance implies an is-like-a relationship, and composition implies a has-a relationship.
 2. favor composition over inheritance.
+
+Localization
+1. Four ways to create a Locale object. They are as follows.
+Locale locale1 = new Local ("it","","");
+Locale locale2 = Locale.forLanguagetag("it");
+Locale locale3 = new Locale.Builder().setLanguageTag("it").build();
+Locale locale4 = Locale.ITALIAN;
 
