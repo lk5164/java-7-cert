@@ -37,6 +37,21 @@ Generics and collections:
 2. The methods hashCode() and equals()need to be consistent for a class.
 3. The second parameter of split() method defines the number of parts that will be divided.
 4. \b will not work if the start and end of a string is not a word character.
+Comparable                                              |Comparator
+________________________________________________________|__________________________________________________________________
+Used when the objects need to be compared in their      |Used when the objects need to be compared in custom 
+natural order.                                          |user-defined order (otherthan the natural order).
+________________________________________________________|__________________________________________________________________
+You do not create a separate class just to implement    |You create a separate class just to implement the Comparator 
+the Comparable interface                                |interface
+________________________________________________________|__________________________________________________________________
+For a given class type, you have only that class (and   |You can have many separate (i.e., independent) classes 
+that class alone) implementing the Comparable interface |implementing the Comparatorinterface, with each class 
+                                                        |defining different ways to compare objects.
+________________________________________________________|__________________________________________________________________
+The method in the Comparable interface is declared      |The method in the Comparatorinterface is declared as 
+as int compareTo(ClassType type)                        |int compare(ClassType type1, ClassType type2)
+________________________________________________________|__________________________________________________________________
 
 Java I/O:
 1. All class members will not be serialized if they are declared as “transit”.
@@ -44,20 +59,20 @@ Java I/O:
 3. the class file of the object must be in the path of the destination machine, otherwise only the state of the object will be restored .
 4. If a class is already serialized and you try to serialize it again, the JVM will not serialize it.
 5. You can create your own protocol for serialization. For that, you just need to implement the Externalizable interface instead of the Serializable interface.
-Character streams					|Byte streams
+Character streams					                    |Byte streams
 ________________________________________________________|__________________________________________________________________
-Meant for reading or writing to character- or		|Meant for reading or writing to binary data I/O such as
-text-based I/O such as text files, text documents,	|executable files, image files, and files in low-level file formats
-XML, and HTML files.					|such as .zip, .class, .obj, and .exe.
+Meant for reading or writing to character- or		    |Meant for reading or writing to binary data I/O such as
+text-based I/O such as text files, text documents,	    |executable files, image files, and files in low-level file formats
+XML, and HTML files.					                |such as .zip, .class, .obj, and .exe.
 ________________________________________________________|_________________________________________________________________
-Data dealt with is 16-bit Unicode characters.		|Data dealt with is bytes (i.e., units of 8-bit data).
+Data dealt with is 16-bit Unicode characters.		    |Data dealt with is bytes (i.e., units of 8-bit data).
 ________________________________________________________|___________________________________________________________________
-Input and output character streams are called		|Input and output byte streams are simply called input streams and output 
-readers and writers, respectively.			|streams, respectively. 
+Input and output character streams are called		    |Input and output byte streams are simply called input streams and output 
+readers and writers, respectively.			            |streams, respectively. 
 ________________________________________________________|__________________________________________________________________
-The abstract classes of Reader and Writer and		|The abstract classes of InputStream and OutputStream and their derived 
-their derived classes in the java.io package		|classes in the java.io package provide support
-provide support for character streams.			|for byte streams.
+The abstract classes of Reader and Writer and		    |The abstract classes of InputStream and OutputStream and their derived 
+their derived classes in the java.io package		    |classes in the java.io package provide support
+provide support for character streams.			        |for byte streams.
 ________________________________________________________|___________________________________________________________________
 
 
