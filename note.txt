@@ -105,6 +105,36 @@ d. Native-protocol driver, e.g. Oracle thin driver, IBM tool box
 Design Principles:
 1. Class inheritance implies an is-a relationship, interface inheritance implies an is-like-a relationship, and composition implies a has-a relationship.
 2. favor composition over inheritance.
+          |Non-Local                                                                                           |Local
+__________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
+Static    |The accessibility (public, protected,etc.) of the static nested class is defined by the outer class.|(Not possible)
+          |The name of the static nested class is expressed with OuterClassName.NestedClassName syntax.        |
+          |When you define an inner nested class (or interface) inside an interface, the nested class is       |
+          | declared implicitly publicand static. This point is easy to remember: any field in an interface is |
+          | implicitly declared publicand static,and static nested classes have this same behavior.            |
+          |Static nested classes can be declared abstractor final.                                             |
+          |Static nested classes can extend another class or it can be used as a base class.                   |
+          |Static nested classes can have static members. (As you’ll see shortly, this statement does not apply|
+          | to other kinds of nested classes.)                                                                 |
+          |Static nested classes can access the members of the outer class (only static members, obviously).   |
+          |The outer class can also access the members (even private members) of the nested class through an   |
+          | object of nested class. If you don’t declare an instance of the nested class, the outer class      |
+          | cannot access nested class elements directly.                                                      |
+__________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
+Non-Static|The accessibility (public, protected, etc.) of the inner class is defined by the outer class.       |You can create a non-static local class inside a body of code. Interfaces cannot have local
+          |Just like top-level classes, an inner class can extend a class or can implement interfaces.         |classes, and you cannot create local interfaces. 
+          |Similarly, an inner class can be extended by other classes, and an inner interface can be           |Local classes are accessible only from the body of the code in which the class is defined. The
+          | implemented or extended by other classes or interfaces.                                            | local classes are completely inaccessible outside the body of the code in which the class is
+          |An inner class can be declared final or abstract.                                                   | defined.
+          |Inner classes can have inner classes, but you’ll have a hard time reading or understanding.         |You can extend a class or implement interfaces while defining a local class. 
+          | such complex nesting of classes. (Meaning: Avoid them!)                                            |A local class can access all the variables available in the body of the code in which it is defined. 
+          |                                                                                                    |You can pass only final variables to a local inner class.   
+__________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
+Anonymous |(Not possible)                                                                                      |Anonymous classes are defined in the new expression itself, so you cannot create multiple 
+          |                                                                                                    | objects of an anonymous class.
+          |                                                                                                    |You cannot explicitly extend a class or explicitly implement interfaces when defining an 
+          |                                                                                                    | anonymous class. 
+__________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
 
 Localization
 1. Four ways to create a Locale object. They are as follows.

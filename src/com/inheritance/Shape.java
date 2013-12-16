@@ -13,7 +13,7 @@ public abstract class Shape {
 //	public final void girth();
 	public abstract double area();
 	
-	public static class Color2 implements ColorInterface{
+	protected static class Color2 implements ColorInterface{
 		int m_red, m_green, m_blue;
 		public String painter;
 		public Color2(){
@@ -32,6 +32,9 @@ public abstract class Shape {
 		public void setPainter(String name) {
 			this.painter = name;
 			
+		}
+		public static void main(String[] args){
+			System.out.println(new Shape.Color2(1,1,1));
 		}
 	}
 }

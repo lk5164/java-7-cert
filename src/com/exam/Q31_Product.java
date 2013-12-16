@@ -13,11 +13,7 @@ public class Q31_Product {
 	}
 
 	public boolean equals(Object obj) {
-		if (this ==obj)
-			return true;
-		if (obj instanceof Q31_Product)
-			return (this.id == ((Q31_Product)obj).id) ? true : super.equals(obj);
-		return false;
+		return (this == obj) ? true : super.equals(obj);
 	}
 
 }
