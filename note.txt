@@ -93,6 +93,7 @@ File I/O:
 1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
 2. If you move a symbolic link with File.move() method, the link itself will be moved, not the target file of the link. It is important to note that in the case of the copy() method, if you specify a symbolic link, the target of the link is copied, not the link itself.
 3. "Relativize" method must be used with two same type file path. If path1 equals as "a/x" and path2 equals as "a/b", then path1.relativize(path2) will return value of "../b" which is the way from path1 to path2.
+4. readline() method will return null if the program already reaches the bottom of the file content. 
  
 Database:
 1. Two-tier architecture and three-tier architecture consist of JDBC architecture.
@@ -110,9 +111,9 @@ __________|_____________________________________________________________________
 Static    |The accessibility (public, protected,etc.) of the static nested class is defined by the outer class.|(Not possible)
           |The name of the static nested class is expressed with OuterClassName.NestedClassName syntax.        |
           |When you define an inner nested class (or interface) inside an interface, the nested class is       |
-          | declared implicitly publicand static. This point is easy to remember: any field in an interface is |
-          | implicitly declared publicand static,and static nested classes have this same behavior.            |
-          |Static nested classes can be declared abstractor final.                                             |
+          | declared implicitly public and static. This point is easy to remember: any field in an interface is|
+          | implicitly declared public and static, and static nested classes have this same behavior.          |
+          |Static nested classes can be declared abstract or final.                                            |
           |Static nested classes can extend another class or it can be used as a base class.                   |
           |Static nested classes can have static members. (As you’ll see shortly, this statement does not apply|
           | to other kinds of nested classes.)                                                                 |
@@ -135,6 +136,8 @@ Anonymous |(Not possible)                                                       
           |                                                                                                    |You cannot explicitly extend a class or explicitly implement interfaces when defining an 
           |                                                                                                    | anonymous class. 
 __________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
+3. Modifier for an interface field can only be public, static or final.
+4. Modifier for an interface method can only be public or abstract.
 
 Localization
 1. Four ways to create a Locale object. They are as follows.
