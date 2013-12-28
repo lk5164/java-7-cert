@@ -17,9 +17,11 @@ public class Q33 {
 		// String database = "coldfusi";
 		// we login as "root" user with password "mysql123"
 		String userName = "scott";
-		String password = "tiger";
+		String password = "system";
+		
 		try (Connection conn = DriverManager.getConnection(url, userName,
 				password); Statement stmt = conn.createStatement();) {
+			stmt.executeUpdate("delete from employees");
 			conn.setAutoCommit(false);
 			stmt.executeUpdate("insert into employees values(1,'Sam')");
 			Savepoint save1 = conn.setSavepoint("point1");
