@@ -77,8 +77,8 @@ provide support for character streams.                  |for byte streams.
 ________________________________________________________|___________________________________________________________________
 
 Thread:
-1. The sleep()method throws InterruptedException.
-2. Can we use sleep() method to let main thread sleep for a while?
+1. The sleep()method throws InterruptedException when another thread "interrupt" its running.
+2. Both ways of creating a thread will not be able to throw an checked Exception on run() method. But by implementing Callable interface can.
 3. If the current thread invokes join() on an instance of another thread, then the current thread waits indefinitely for that other thread to die.
 4.  If an exception gets thrown inside the synchronized block, the lock will be automatically released by the JVM.
 5. With synchronized blocks, you can acquire a lock on a reference variable only. If you use a primitive type, you will get a compiler error.
@@ -87,7 +87,7 @@ Thread:
 8. When you call start(), the thread moves to the new state. There is no proper state transition from the new state if you call start()again, so the JVM throws an IllegalThreadStateException.
 9. The wait(int)method (with or without timeout value) should be called only after acquiring a lock
 10. You cannot synchronized an interface or abstract method. 
-11. CopyOnWriteArrayList class is used in concurrent case where a thread try to remove an empty ArrayList, it will wait until another thread add one element for that ArrayList
+11. CopyOnWriteArrayList class is used in concurrent case where a thread try to remove an empty ArrayList, it will wait until another thread add one element for that ArrayList 
 
 File I/O:
 1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
@@ -138,6 +138,7 @@ Anonymous |(Not possible)                                                       
 __________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
 3. Modifier for an interface field can only be public, static or final.
 4. Modifier for an interface method can only be public or abstract.
+5. A class implementing an interface must either implement all the methods of that interface otherwise known as the abstract class.
 
 Localization
 1. Four ways to create a Locale object. They are as follows.
