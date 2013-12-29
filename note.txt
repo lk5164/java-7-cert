@@ -138,6 +138,7 @@ Anonymous |(Not possible)                                                       
 __________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
 3. Modifier for an interface field can only be public, static or final.
 4. Modifier for an interface method can only be public or abstract.
+5. A class implementing an interface must either implement all the methods of that interface otherwise known as the abstract class.
 
 Localization
 1. Four ways to create a Locale object. They are as follows.
