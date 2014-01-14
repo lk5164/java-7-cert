@@ -12,10 +12,10 @@ Inheritance:
 11. A constructor in an enum class can only be specified as private.
 12. If you declare a data member in an interface, it should be initialized, and all such data members are implicitly treated as “public static final” members.
 13. All methods in the java.util.math library are static
-14. Variables in an Interface is public and static, methods in a Interface is either public or abstract. 
+14. Variables in an Interface is public and static, methods in a Interface is either public or public abstract. 
 15. Regarding questions about has-a and is-a relationship, always focus on direct relationship. 
 16. Enums are implicitly declared public, static, and final, which means you cannot extend them.
-17. Overloading means same method name in the same class, overriding means same method name in inheritance hierarchy.
+17. Overloading (static polymorphism) means same method name in the same class, overriding (dynamic polymorphism) means same method name in inheritance hierarchy.
 18. Comparing overloading and overriding:
 Overriding                                              |Overloading
 ________________________________________________________|__________________________________________________________________
@@ -32,6 +32,8 @@ Should not throw new or broader checked exceptions      |You cannot overload met
                                                         |specifications alone.
 ________________________________________________________|__________________________________________________________________
 19. Any field in an interface is implicitly declared public and static.
+20. All enums implicitly implement Comparable.
+21. An enum can implement an interface. 
 
 Generics and collections:
 1. When you use wildcard parameters, you cannot call methods that modify the object.
@@ -53,6 +55,7 @@ ________________________________________________________|_______________________
 The method in the Comparable interface is declared      |The method in the Comparatorinterface is declared as 
 as int compareTo(ClassType type)                        |int compare(ClassType type1, ClassType type2)
 ________________________________________________________|__________________________________________________________________
+5. As for Deque, pop() is equal to removeFirst(), and so does remove().
 
 Java I/O:
 1. All class members will not be serialized if they are declared as “transit”.
@@ -88,6 +91,7 @@ Thread:
 9. The wait(int)method (with or without timeout value) should be called only after acquiring a lock
 10. You cannot synchronized an interface or abstract method. 
 11. CopyOnWriteArrayList class is used in concurrent case where a thread try to remove an empty ArrayList, it will wait until another thread add one element for that ArrayList 
+12. Synchronized keyword can be used for an static method. In that case, the lock will acquired for that "class object". 
 
 File I/O:
 1. Even if two Path objects are pointing to the same file/directory, it is possible that equals() returns false. You need to make sure that both paths are absolute paths
@@ -136,9 +140,7 @@ Anonymous |(Not possible)                                                       
           |                                                                                                    |You cannot explicitly extend a class or explicitly implement interfaces when defining an 
           |                                                                                                    | anonymous class. 
 __________|____________________________________________________________________________________________________|_____________________________________________________________________________________________________
-3. Modifier for an interface field can only be public, static or final.
-4. Modifier for an interface method can only be public or abstract.
-5. A class implementing an interface must either implement all the methods of that interface otherwise known as the abstract class.
+3. A class implementing an interface must either implement all the methods of that interface otherwise known as the abstract class.
 
 Localization
 1. Four ways to create a Locale object. They are as follows.
