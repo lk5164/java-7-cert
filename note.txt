@@ -98,6 +98,7 @@ File I/O:
 2. If you move a symbolic link with File.move() method, the link itself will be moved, not the target file of the link. It is important to note that in the case of the copy() method, if you specify a symbolic link, the target of the link is copied, not the link itself.
 3. "Relativize" method must be used with two same type file path. If path1 equals as "a/x" and path2 equals as "a/b", then path1.relativize(path2) will return value of "../b" which is the way from path1 to path2.
 4. readline() method will return null if the program already reaches the bottom of the file content. 
+5. The available StandardCopyOptions enums available are for move operation are: StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE
  
 Database:
 1. Two-tier architecture and three-tier architecture consist of JDBC architecture.
@@ -106,6 +107,12 @@ a. JDBC-ODBC driver
 b. Native-API driver, e.g. ojdbc14.jar
 c. Network-protocol JDBC (for three-tier architecture), e.g. http://www.javaworld.com/javaworld/jw-05-2002/jw-0517-jdbcdriver.html?page=1
 d. Native-protocol driver, e.g. Oracle thin driver, IBM tool box
+3. RowSet Comparison:
+a. JdbcRowSetis a connected RowSetwhile other subinterfaces of RowSet(i.e., JoinRowSet, CachedRowSet, WebRowSet, and FilteredRowSet) are disconnected RowSets.
+b. CachedRowSetis has all the features JdbcRowSetsupports plus it has the capabilities of a disconnected ResultSet. 
+c. WebRowSet adds XML capabilities to the CachedRowSetfeatures. 
+d. JoinRowSetadds SQL join capabilities to WebRowSet.
+e. FilteredRowSet adds result filtering capabilities to WebRowSet.
 
 Design Principles:
 1. Class inheritance implies an is-a relationship, interface inheritance implies an is-like-a relationship, and composition implies a has-a relationship.
