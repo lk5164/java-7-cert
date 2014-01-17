@@ -56,6 +56,7 @@ The method in the Comparable interface is declared      |The method in the Compa
 as int compareTo(ClassType type)                        |int compare(ClassType type1, ClassType type2)
 ________________________________________________________|__________________________________________________________________
 5. As for Deque, pop() is equal to removeFirst(), and so does remove().
+6. ArrayList's index starts from 0.
 
 Java I/O:
 1. All class members will not be serialized if they are declared as “transit”.
