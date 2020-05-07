@@ -157,3 +157,8 @@ Locale locale2 = Locale.forLanguagetag("it");
 Locale locale3 = new Locale.Builder().setLanguageTag("it").build();
 Locale locale4 = Locale.ITALIAN;
 
+Error Handling
+1. try-catch-finally statement
+Statement inside finally will be executed anyway except .exit(0) is called before.
+2. The try-with-resources Statement
+The try-with-resources statement provides the capability of declaring resources that must be closed when they are no longer needed. These resources must implement the AutoCloseable interface. Prior to Java SE 7, these resources were typically closed in the finally clause.
